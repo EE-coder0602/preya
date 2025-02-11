@@ -30,10 +30,6 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
-        #valentineImage {
-            width: 300px;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -52,7 +48,6 @@
         let noClicks = 0;
         function yesResponse() {
             document.body.innerHTML = "<h1>Thank uuuuuuuuuuuu, Now U're my Valentine! ❤️</h1>";
-            document.body.innerHTML += "<img id='valentineImage' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA... (Your Base64 String Here) ...' alt='Your Valentine'><br>";
             document.body.innerHTML += "<div class='hearts'>❤️❤️❤️❤️❤️</div>";
             setTimeout(() => {
                 document.body.innerHTML += '<h2>Want to have a coffee date?</h2>' +
@@ -75,7 +70,6 @@
                 noBtn.style.fontSize = "30px";
             } else {
                 document.body.innerHTML = "<h1>Yeeeyy thank uuuuu, now U're my Valentine! ❤️</h1>";
-                document.body.innerHTML += "<img id='valentineImage' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA... (Your Base64 String Here) ...' alt='Your Valentine'><br>";
                 document.body.innerHTML += "<div class='hearts'>❤️❤️❤️❤️❤️</div>";
                 setTimeout(() => {
                     document.body.innerHTML += '<h2>Want to have a coffee date?</h2>' +
@@ -86,7 +80,7 @@
         }
 
         function coffeeDate() {
-            document.body.innerHTML = "<h1>Then it's a date! See u on February 14 my Valentine :></h1>";
+            document.body.innerHTML = "<h1>Then it's a date! See u on February 14 Freeyaaaaa :></h1>";
         }
         
         function noCoffee() {
@@ -95,3 +89,4 @@
     </script>
 </body>
 </html>
+
