@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: pink;
+        }
+        button {
+            font-size: 20px;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #noBtn {
+            transition: all 0.3s ease;
+        }
+        .hearts {
+            font-size: 50px;
+            color: red;
+            animation: float 1.5s infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        #valentineImage {
+            width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <button onclick="yesResponse()">Yes</button>
+    <button id="noBtn" onclick="noResponse()">No</button>
+    
+    <p id="message"></p>
+    <div id="nextQuestion" style="display: none;">
+        <h2>Want to have a coffee date?</h2>
+        <button onclick="coffeeDate()">Yes</button>
+        <button onclick="noCoffee()">No</button>
+    </div>
+
+    <script>
+        let noClicks = 0;
+        function yesResponse() {
+            document.body.innerHTML = "<h1>Thank uuuuuuuuuuuu, Now U're my Valentine! ❤️</h1>";
+            document.body.innerHTML += "<img id='valentineImage' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA... (Your Base64 String Here) ...' alt='Your Valentine'><br>";
+            document.body.innerHTML += "<div class='hearts'>❤️❤️❤️❤️❤️</div>";
+            setTimeout(() => {
+                document.body.innerHTML += '<h2>Want to have a coffee date?</h2>' +
+                                           '<button onclick="coffeeDate()">Yes</button>' +
+                                           '<button onclick="noCoffee()">No</button>';
+            }, 2000);
+        }
+
+        function noResponse() {
+            noClicks++;
+            let noBtn = document.getElementById('noBtn');
+            let message = document.getElementById('message');
+            
+            if (noClicks === 1) {
+                message.innerText = "Please don't decline :<";
+            } else if (noClicks === 2) {
+                message.innerText = "You can't keep saying no :<";
+            } else if (noClicks === 3) {
+                noBtn.innerText = "No I can't decline this";
+                noBtn.style.fontSize = "30px";
+            } else {
+                document.body.innerHTML = "<h1>Yeeeyy thank uuuuu, now U're my Valentine! ❤️</h1>";
+                document.body.innerHTML += "<img id='valentineImage' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA... (Your Base64 String Here) ...' alt='Your Valentine'><br>";
+                document.body.innerHTML += "<div class='hearts'>❤️❤️❤️❤️❤️</div>";
+                setTimeout(() => {
+                    document.body.innerHTML += '<h2>Want to have a coffee date?</h2>' +
+                                               '<button onclick="coffeeDate()">Yes</button>' +
+                                               '<button onclick="noCoffee()">No</button>';
+                }, 2000);
+            }
+        }
+
+        function coffeeDate() {
+            document.body.innerHTML = "<h1>Then it's a date! See u on February 14 my Valentine :></h1>";
+        }
+        
+        function noCoffee() {
+            document.body.innerHTML = "<h1>Okay, but you're still my Valentine! ❤️</h1>";
+        }
+    </script>
+</body>
+</html>
